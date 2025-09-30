@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- //
+    // Metadata for a 2005-era website.
+    // Keywords for old search engines like AltaVista, Lycos, etc.
+    // -->
+    <meta name="keywords" content="John D. Rockefeller V, Rockyism, ARM America, American Renewal Movement, The Praetorians, Rocky's Praetorians, Take America Back, Rocky 2008, American Restoration">
+    <meta name="description" content="The official voice of the Vanguard of Renewal. We are the true believers in Rockyism. We will secure the Rockefeller Guarantee by any means necessary.">
+    <title>Rocky's Praetorians :: The Vanguard of Renewal</title>
+    <style>
+        /* * CSS for the Rocky's Praetorians Website
+         * Designed to evoke a 2005 "Hearts of Iron 4: Fire Rises" mod aesthetic.
+         * Dark theme, purple/blue accents, retro fonts, and CRT effects.
+        */
+        :root {
+            --main-bg-color: #1a1a2e; /* Deep, dark navy/purple */
+            --primary-purple: #8e44ad; /* A strong, vibrant purple */
+            --accent-blue: #00a8ff; /* Electric blue for highlights */
+            --text-color: #e0e0e0; /* Off-white for readability */
+            --header-font: 'Impact', 'Arial Black', sans-serif; /* Hard-hitting font */
+            --body-font: 'Courier New', Courier, monospace; /* Classic hacker/terminal font */
+            --danger-red: #ff3838;
+        }
+
+        body {
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMWExYTJlIj48L3JlY3Q+PHBhdGggZD0iTTAgMTAgTDUwIDEwIFoiIHN0cm9rZT0iIzE2MmQzZCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTAgMjAgTDUwIDIwIFoiIHN0cm9rZT0iIzE2MmQzZCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTAgMzAgTDUwIDMwIFoiIHN0cm9rZT0iIzE2MmQzZCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTAgNDAgTDUwIDQwIFoiIHN0cm9rZT0iIzE2MmQzZCIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PC9zdmc+');
+        }
+
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: rgba(22, 45, 61, 0.7);
+            border-left: 3px solid var(--primary-purple);
+            border-right: 3px solid var(--primary-purple);
+            padding: 10px 20px;
+            box-shadow: 0 0 25px rgba(142, 68, 173, 0.5);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 5px groove var(--primary-purple);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-family: var(--header-font);
+            font-size: 3.5em;
+            color: var(--primary-purple);
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0px var(--accent-blue);
+            margin: 10px 0 0 0;
+            animation: text-flicker 3s linear infinite;
+        }
+
+        header p.tagline {
+            font-size: 1.2em;
+            color: var(--accent-blue);
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        /* Navigation styled to look like old-school buttons */
+        nav {
+            background-color: var(--main-bg-color);
+            padding: 10px;
+            text-align: center;
+            border-top: 2px solid var(--accent-blue);
+            border-bottom: 2px solid var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: var(--header-font);
+            font-size: 1.2em;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: 2px outset var(--primary-purple);
+            background-color: #333;
+            transition: all 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary-purple);
+            color: white;
+            border-style: inset;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        /* Classic 2005-era news ticker */
+        .news-ticker {
+            background-color: #111;
+            padding: 8px;
+            border: 2px solid var(--primary-purple);
+            color: var(--danger-red);
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        /* Main content area */
+        .content-section {
+            display: none; /* Hidden by default, shown by JS */
+            padding: 15px;
+            border: 2px solid var(--accent-blue);
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.8), rgba(36, 36, 66, 0.8));
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .content-section.active {
+            display: block;
+        }
+        
+        h2 {
+            font-family: var(--header-font);
+            font-size: 2.5em;
+            color: var(--primary-purple);
+            text-align: center;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        /* The main GIF and its container */
+        .gif-container {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            background: #000;
+            border: 5px ridge var(--primary-purple);
+            padding: 10px;
+        }
+
+        .gif-container img {
+            width: 80%;
+            max-width: 500px;
+            filter: grayscale(20%) contrast(150%) brightness(90%);
+            mix-blend-mode: lighten;
+            opacity: 0.9;
+        }
+
+        /* CRT Scanlines and flicker effect */
+        .gif-container::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 3px, 5px 100%;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+
+        .main-quote {
+            font-family: var(--header-font);
+            font-size: 2em;
+            color: var(--accent-blue);
+            text-align: center;
+            text-shadow: 2px 2px 0px var(--primary-purple);
+            padding: 15px;
+            border: 2px dashed var(--primary-purple);
+            background-color: rgba(0,0,0,0.5);
+            margin: 20px 0;
+        }
+
+        p, li {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: var(--primary-purple);
+            font-weight: bold;
+        }
+        
+        .quote-block {
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 1.2em;
+            background-color: rgba(0,0,0,0.3);
+            padding: 15px;
+        }
+
+        /* Section-specific layouts */
+        .doctrine-entry, .dispatch-entry, .enemy-entry {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--accent-blue);
+        }
+        .doctrine-entry h3, .dispatch-entry h3, .enemy-entry h3 {
+            font-family: var(--header-font);
+            color: var(--accent-blue);
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        .doctrine-entry .praetorian-truth {
+            border: 2px solid var(--primary-purple);
+            padding: 10px;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .dispatch-entry .dispatch-meta {
+            font-size: 0.9em;
+            color: var(--accent-blue);
+            font-style: italic;
+        }
+        .enemy-entry .enemy-description {
+            color: var(--danger-red);
+            font-weight: bold;
+        }
+        
+        .arsenal-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .arsenal-list li {
+            font-family: var(--header-font);
+            font-size: 1.5em;
+            text-align: center;
+            color: var(--text-color);
+            background-color: rgba(0,0,0,0.2);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--primary-purple);
+            transition: all 0.3s;
+        }
+        .arsenal-list li:hover {
+            background-color: var(--primary-purple);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            border-top: 5px groove var(--primary-purple);
+            font-size: 0.9em;
+        }
+        
+        @keyframes flicker {
+            0% { opacity: 0.2; } 5% { opacity: 0.8; } 10% { opacity: 0.25; } 20% { opacity: 0.9; } 30% { opacity: 0.4; } 40% { opacity: 0.8; } 50% { opacity: 0.5; } 60% { opacity: 1; } 70% { opacity: 0.3; } 80% { opacity: 0.7; } 90% { opacity: 0.5; } 100% { opacity: 0.8; }
+        }
+        @keyframes text-flicker {
+            0%, 100% { text-shadow: 2px 2px 0px var(--accent-blue), 0 0 20px var(--primary-purple); } 50% { text-shadow: 2px 2px 0px var(--accent-blue), 0 0 30px var(--primary-purple); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>ROCKY'S PRAETORIANS</h1>
+            <p class="tagline">Securing the Rockefeller Guarantee... By Any Means Necessary.</p>
+        </header>
+
+        <nav>
+            <a href="#home" class="nav-link active" onclick="showSection('home')">HOME</a>
+            <a href="#manifesto" class="nav-link" onclick="showSection('manifesto')">THE BETRAYAL</a>
+            <a href="#dispatches" class="nav-link" onclick="showSection('dispatches')">DISPATCHES</a>
+            <a href="#doctrine" class="nav-link" onclick="showSection('doctrine')">THE DOCTRINE</a>
+            <a href="#enemies" class="nav-link" onclick="showSection('enemies')">ENEMIES LIST</a>
+            <a href="#arsenal" class="nav-link" onclick="showSection('arsenal')">ARSENAL</a>
+            <a href="#join" class="nav-link" onclick="showSection('join')">THE VANGUARD</a>
+        </nav>
+
+        <div class="news-ticker">
+            <marquee behavior="scroll" direction="left">
+                *** LATEST INTEL: Pat Buchanan convenes with GLOBALIST bankers in Switzerland... what are they planning? *** D.C. INSIDER warns of a new "Domestic Security Act" aimed at silencing dissent... they want to label patriots as terrorists... stay vigilant *** RUMORS swirl of Rockefeller preparing an independent run if Dem establishment blocks him... THE REVOLUTION WILL NOT BE STOPPED ***
+            </marquee>
+        </div>
+        
+        <!-- HOME SECTION -->
+        <div id="home" class="content-section active">
+            <div class="gif-container">
+                <img src="https://media1.tenor.com/m/80oHeL4P2U0AAAAC/equilibrium-christian-bale.gif" alt="The Vanguard of the Renewal">
+            </div>
+            <div class="main-quote">
+                ROCKYISM, NOT GLOBALISM, IS OUR CREDO.
+            </div>
+            <p>You have arrived at the digital headquarters of the true American Renewal. We are the Vanguard. We are the Praetorian Guard for the American Republic. While the mainstream ARM America movement seeks change through polite requests and compromised politics, we understand the truth: power is never given, it is taken.</p>
+            <p>Governor John D. Rockefeller V, a true Democrat in the tradition of FDR and Truman, ignited the flame of revolution. We are the inferno. The Domino Recession was not a mistake; it was an attack. The globalist elites, the sellouts in Washington, and the radical right puppets all feed from the same trough. They laugh at your patriotism while they sell your children's future to the highest bidder.</p>
+            <p>This site is a beacon for the awakened. It is a repository of forbidden truths and a call to arms for those with the steel in their spines to do what is necessary. The time for talk is over. The time for action is now.</p>
+        </div>
+
+        <!-- MANIFESTO / THE BETRAYAL SECTION -->
+        <div id="manifesto" class="content-section">
+            <h2>The Betrayal of the American Worker</h2>
+            <p><strong>[An excerpt from a founding member's journal]</strong></p>
+            <p><em>"My name doesn't matter. I used to be a foreman at a plant in Ohio that made ball bearings. The best in the world. For thirty years, I punched the clock, raised a family, paid my taxes. I believed in the promise. Then one Tuesday, a man in a suit I'd never seen before walked onto the floor and told us the plant was closing. Moving to Mexico. He said it was 'fiscally responsible.' I saw my friends, men I'd worked with my whole life, tough as nails, with tears in their eyes. That wasn't fiscal responsibility. That was betrayal."</em></p>
+            <p>That story is our story. It's the story of millions. We are the ghosts of the American Dream. We are the steelworkers from Phoenix, the tech workers from the dot-com bust, the veterans who came home to find their country sold out from under them. We gathered at the rallies. We heard Governor Rockefeller's words and felt a hope we thought was long dead. He gave us the vision: an America for Americans.</p>
+            <p>But then we watched. We watched as the old guard, the party insiders in our own Democratic party, and the media talking heads tried to sand down the edges, to make his revolution 'palatable' to the very elites he swore to destroy.</p>
+            <p>They call us 'radical.' We are not. We are simply the ones who listened. We are the ones who believe Rockefeller when he says this is a fight for the SOUL of America. A soul cannot be won through compromise with the devil.</p>
+            <p>The establishment—both the Radical Right under Buchanan and the corporate-controlled Democratic Leadership—are two heads of the same corrupt serpent. They create chaos, they distract you with culture wars, they point fingers while their lobbyist masters write the laws that bleed this country dry. They want you divided. They want you weak.</p>
+            <p>The American Renewal Movement (ARM) is the heart of the revolution. But a heart needs a shield and a sword. We are that shield. We are that sword. We are Rocky's Praetorians, and our loyalty is not to a party platform, but to the promise: <strong>If you work hard, America WILL work for you.</strong> We are here to make them keep that promise.</p>
+        </div>
+        
+        <!-- DISPATCHES SECTION -->
+        <div id="dispatches" class="content-section">
+            <h2>Dispatches from the Front</h2>
+            <div class="dispatch-entry">
+                <h3>The Phoenix Fire Rises</h3>
+                <p class="dispatch-meta">DATE: January 15, 2005 // LOCATION: Phoenix, AZ</p>
+                <p>The Governor's first rally was more than a speech; it was a spark in a powder keg. We saw it in their eyes. The hope. The anger. The mainstream media focused on the fireworks, but we saw the real story. After the cameras left, we talked to the steelworkers. They aren't just looking for a new job. They're looking for payback. Contacts were made. The first cells of the Vanguard are forming in the rust and the dust.</p>
+            </div>
+            <div class="dispatch-entry">
+                <h3>A Message in San Francisco</h3>
+                <p class="dispatch-meta">DATE: January 24, 2005 // LOCATION: San Francisco, CA</p>
+                <p>While Rockefeller shook the city at Golden Gate Park, we delivered a message of our own. The headquarters of a certain 'global investment firm' that financed the closure of three American factories last year had a late-night visitor. Their precious glass doors were plastered with hundreds of pink slips, each one bearing the name of a worker they betrayed. A small act, but a symbolic one. Let them know we know who they are and where they are.</p>
+            </div>
+             <div class="dispatch-entry">
+                <h3>The Buchanan Betrayal</h3>
+                <p class="dispatch-meta">DATE: November 10, 2004 // LOCATION: Classified</p>
+                <p>The election results are in. Buchanan scrapes by. Do not be fooled. This is not a victory for patriotism. It is a victory for the controlled opposition. Buchanan talks tough, but he's a paper tiger, designed to placate the masses while the globalist agenda continues unabated. He is a speed bump on the road to renewal, not a roadblock. His weakness only makes the need for Rockefeller's—and our—strength more critical.</p>
+            </div>
+        </div>
+        
+        <!-- THE ROCKY DOCTRINE SECTION -->
+        <div id="doctrine" class="content-section">
+            <h2>The Rocky Doctrine: Unfiltered Truths</h2>
+            <p>Governor Rockefeller speaks to the masses. He must choose his words carefully. We are under no such constraints. Here is the unvarnished truth of the Rockyism platform—what it REALLY means to put America First.</p>
+            <!-- ... existing doctrine entries ... -->
+            <div class="doctrine-entry">
+                <h3>ON THE ECONOMY & CHINA</h3>
+                <p><strong>The Public Stance:</strong> "We will build everything in America! We will shut down Chinese factories, making America the manufacturing capital of the world again!"</p>
+                <div class="praetorian-truth"><p><strong>The Praetorian Truth:</strong> "Free trade is a lie told by rich men. We're not just 'competing' with China. We are declaring economic war. We will impose a 100% 'America First' tariff on any non-essential good from any nation that uses slave labor. Any American CEO who closes a factory here to open one there will be tried for economic treason. Their assets will be seized and given to their former workers."</p></div>
+            </div>
+            <div class="doctrine-entry">
+                <h3>ON THE POLITICAL ESTABLISHMENT</h3>
+                <p><strong>The Public Stance:</strong> "This is not a battle of Democrat versus Republican. This is Main Street versus Wall Street!"</p>
+                <div class="praetorian-truth"><p><strong>The Praetorian Truth:</strong> "The fight is not just against the Republicans. It's a two-front war against Buchanan's cronies AND the sellout Democratic elites who abandoned the worker decades ago. They are the 'Uniparty.' When Rockefeller takes the party, and then the country, we won't just defeat the opposition. We will purge our own ranks of the corporate collaborators and rebuild the Democratic party as a true weapon for the working class."</p></div>
+            </div>
+            <div class="doctrine-entry">
+                <h3>ON IMMIGRATION</h3>
+                <p><strong>The Public Stance:</strong> "Federal jobs for federal citizens!"</p>
+                <div class="praetorian-truth"><p><strong>The Praetorian Truth:</strong> "A nation that cannot control its borders is a historical joke. We will not just 'build a wall.' We will implement a nationwide E-verify system, end birthright citizenship, and begin the largest deportation operation in human history. This is our home. We decide who gets to live here. It's that simple."</p></div>
+            </div>
+             <div class="doctrine-entry">
+                <h3>ON THE MEDIA</h3>
+                <p><strong>The Public Stance:</strong> "We will fight for the soul of America!"</p>
+                <div class="praetorian-truth"><p><strong>The Praetorian Truth:</strong> "The corporate media is the propaganda arm of the globalist state. They are the enemy of the people. We will use antitrust laws to break up the six corporations that control 90% of what you see and hear. We will establish a publicly funded, fiercely independent American News Network that reports only the facts, without the coastal elite spin. Lying to the American people on a mass scale will be treated as an act of sedition."</p></div>
+            </div>
+            <div class="doctrine-entry">
+                <h3>ON WALL STREET & THE BAILOUTS</h3>
+                <p><strong>The Public Stance:</strong> "The billionaire class is TREMBLING. Lobbyists are HIDING."</p>
+                <div class="praetorian-truth"><p><strong>The Praetorian Truth:</strong> "You don't give a thief a loan; you put him in jail. The bailouts are a sick joke. We will enact the 'American Clawback Act.' We will retroactively seize every dollar of bonuses paid out by bailed-out banks since the start of the Domino Recession. The money will fund the American Pension. We will nationalize any bank deemed 'too big to fail' and turn it into a public utility that serves the American people, not a handful of gamblers."</p></div>
+            </div>
+            <div class="doctrine-entry">
+                <h3>ON FOREIGN POLICY</h3>
+                <p><strong>The Public Stance:</strong> "While Moscow flexes its muscles, Wall Street cashes in!"</p>
+                <div class="praetorian-truth"><p><strong>The Praetorian Truth:</strong> "Our so-called 'allies' in Europe have been laughing at us for decades, growing rich and decadent under the umbrella of American military protection. That ends now. They will pay for their own defense. All foreign aid will be cut to zero. The money will be used to rebuild our own country. We will only engage with the world on our terms. America First means America ONLY."</p></div>
+            </div>
+        </div>
+
+        <!-- ENEMIES LIST SECTION -->
+        <div id="enemies" class="content-section">
+            <h2>Enemies of the American Renewal</h2>
+            <p>Know them. Identify them. They are the architects of our decline. They are the targets of our renewal.</p>
+            <div class="enemy-entry">
+                <h3>The Globalist Cabal</h3>
+                <p class="enemy-description">The international bankers, the Davos elite, the unelected bureaucrats in Brussels and at the UN. They see nations as inconvenient obstacles to their borderless corporate empire. They promote open borders and free trade to destroy American sovereignty and enrich themselves.</p>
+            </div>
+            <div class="enemy-entry">
+                <h3>The Washington Uniparty</h3>
+                <p class="enemy-description">The Republican leadership and the Clinton-era Democratic establishment who pretend to fight on TV but serve the same globalist masters. They are the Uniparty, traitors in tailored suits, selling our birthright for campaign contributions.</p>
+            </div>
+            <div class="enemy-entry">
+                <h3>The Corporate Media Machine</h3>
+                <p class="enemy-description">The talking heads and so-called journalists who parrot the establishment line. They ignore the plight of the working class while obsessing over trivialities. They smear patriots as radicals and protect the powerful. They are not the press; they are the palace guard.</p>
+            </div>
+            <div class="enemy-entry">
+                <h3>The Corporate Traitors</h3>
+                <p class="enemy-description">The CEOs and boards of directors who fire American workers while waving the American flag in their commercials. They pledge allegiance not to this country, but to their shareholders and their bottom line. They are the economic Benedict Arnolds of our time.</p>
+            </div>
+        </div>
+        
+        <!-- ARSENAL OF TRUTHS SECTION -->
+        <div id="arsenal" class="content-section">
+            <h2>Arsenal of Truths</h2>
+            <p>Memorize these. Spread them. They are the weapons in our information war.</p>
+            <ul class="arsenal-list">
+                <li>They Have Their Billionaires. We Have Our Will.</li>
+                <li>Build American, Or Go Bankrupt.</li>
+                <li>Globalism Is The Disease. ROCKYISM Is The Cure.</li>
+                <li>One Nation, Under Rocky, Indivisible.</li>
+                <li>The Swamp In DC Is Deep. We're Not Draining It, We're Paving It.</li>
+                <li>Make America Work Again. Not For Them. For US.</li>
+                <li>They Want A Global Reset. We Want An American Restoration.</li>
+                <li>No More Foreign Wars. The Only War Is The Class War At Home.</li>
+                <li>Their Media Lies. Our Resolve Is Truth.</li>
+                <li>ARM AMERICA. WIN AMERICA. OWN AMERICA.</li>
+            </ul>
+        </div>
+        
+        <!-- JOIN THE VANGUARD SECTION -->
+        <div id="join" class="content-section">
+            <h2>Join The Vanguard</h2>
+            <p>We are not a club. We are not a fan page. We are the committed core of a revolution.</p>
+            <div class="quote-block">
+                "We do not accept online donations; we are not for sale. We do not have a public mailing list; we do not seek the approval of the weak. Our membership is earned through action, not subscription."
+            </div>
+            <p>If you understand the words on this site not as rhetoric, but as a declaration of intent, then you are already one of us. The time for centralized organization is past. The digital world is compromised, watched by the very enemies we seek to overthrow.</p>
+            <p>Instead, we operate as a network. A web of patriots. You will know us by our works. You will find us in the union halls, the veterans' lodges, the factory floors, and the forgotten towns. How to act?</p>
+            <ul>
+                <li><strong>Observe:</strong> Identify the Enemies of Renewal in your community. Who owns the local paper? Which businesses just laid off workers to move overseas? Who are the political gatekeepers?</li>
+                <li><strong>Organize:</strong> Find others who see the truth. Speak quietly, but with conviction. A cell of three committed patriots is more powerful than a mob of a thousand spectators.</li>
+                <li><strong>Act:</strong> Counter the lies. Support local businesses that are truly local. Expose corruption when you see it. Be a force for the Renewal in your own sphere of influence.</li>
+            </ul>
+            <p><strong>Your task is simple:</strong> Be ready. When the call comes, you will know. Until then, stay strong, stay vigilant, and never forget who betrayed you.</p>
+            <p>For secure communication, use encrypted channels. We monitor this address:</p>
+            <p><strong>praetorian_renewal_08@hushmail.com</strong></p>
+            <p>Do not send your name. Send your skills. Send enemy intelligence. Send your commitment.</p>
+            <p><strong>ARM AMERICA FOR VICTORY!</strong></p>
+        </div>
+
+        <footer>
+            <p>&copy; 2005 - The Praetorian Vanguard. Information on this site is for patriotic Americans only. All rights reserved for the People.</p>
+            <p>This site is not affiliated with the official ARM America campaign. We are the true believers.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Simple JavaScript for page navigation in a single-page layout.
+        // This was common in 2005 before modern frameworks.
+        function showSection(sectionId) {
+            // Get all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+            
+            // Update active state on nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Scroll to top of the container
+            document.querySelector('.container').scrollTop = 0;
+        }
+
+        // Ensure the correct section is shown on initial load (if a hash is present)
+        window.onload = function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        };
+    </script>
+
+</body>
+</html>
+
